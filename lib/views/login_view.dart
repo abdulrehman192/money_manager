@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:money_manager/main.dart';
 import 'package:money_manager/utils/colors.dart';
 import 'package:money_manager/viewModels/login_viewModel.dart';
 import 'package:money_manager/widgets/circle_button.dart';
