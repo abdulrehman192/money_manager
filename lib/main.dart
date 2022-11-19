@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:money_manager/viewModels/login_viewModel.dart';
+import 'package:provider/provider.dart';
 import '/views/views.dart';
 
 void main() {
@@ -11,14 +13,19 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Money Manager',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => LoginViewModel()),
+      ],
+      child: MaterialApp(
+        title: 'Money Manager',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
 
-        primarySwatch: Colors.grey,
+          primarySwatch: Colors.deepOrange,
+        ),
+        home: const SplashView()
       ),
-      home: const SplashView()
     );
   }
 }
